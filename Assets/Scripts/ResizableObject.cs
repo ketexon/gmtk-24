@@ -10,9 +10,25 @@ public class ResizableObject : MonoBehaviour
     [SerializeField] float largeScale = 2;
     [SerializeField] AnimationCurve curve;
 
-    bool resized = false;
-    float resizeStartTime;
+    new protected Rigidbody rigidbody;
+
+    protected bool resized = false;
+    protected float resizeStartTime;
+
     float targetScale;
+
+    virtual protected void Reset()
+    {
+        curve = new AnimationCurve(
+            new Keyframe(0, 0, 0, 1.5f),
+            new Keyframe(1, 1, 0, 0)
+        );
+    }
+
+    virtual protected void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
 
     virtual protected void Update()
     {
