@@ -14,7 +14,7 @@ public class ResizableObject : MonoBehaviour
     float resizeStartTime;
     float targetScale;
 
-    void Update()
+    virtual protected void Update()
     {
         if (!resized) return;
         var t = (Time.time - resizeStartTime) / resizeDuration;
@@ -30,7 +30,7 @@ public class ResizableObject : MonoBehaviour
         }
     }
 
-    public void Enlarge()
+    virtual public void Enlarge()
     {
         if (resized) return;
         targetScale = largeScale;
@@ -38,7 +38,7 @@ public class ResizableObject : MonoBehaviour
         resizeStartTime = Time.time;
     }
 
-    public void Shrink()
+    virtual public void Shrink()
     {
         if (resized) return;
         targetScale = smallScale;
