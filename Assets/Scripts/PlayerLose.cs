@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerLose : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collision)
+    void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(collision.gameObject.CompareTag("Obstacle")){
-            Debug.Log("LOSE");
+        if(hit.gameObject.CompareTag("Obstacle")){
+            Time.timeScale = 0;
+            GameOverUI.Instance.Enable();
         }
     }
 }

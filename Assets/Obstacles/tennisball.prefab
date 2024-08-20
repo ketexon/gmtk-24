@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bbe09455f192f931f97456b24ce55a6e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6922793697723135513, guid: f7c712a24668e93e7be420fed49ce048, type: 3}
+    - target: {fileID: -5754084199372789682, guid: bbe09455f192f931f97456b24ce55a6e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -267120772251902231, guid: f7c712a24668e93e7be420fed49ce048, type: 3}
     - target: {fileID: 919132149155446097, guid: bbe09455f192f931f97456b24ce55a6e, type: 3}
       propertyPath: m_Name
       value: tennisball

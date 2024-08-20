@@ -198,7 +198,7 @@ MonoBehaviour:
   resizeDuration: 0.25
   smallScale: 0.15
   defaultScale: 0.3
-  largeScale: 0.61
+  largeScale: 0.8
   curve:
     serializedVersion: 2
     m_Curve:
