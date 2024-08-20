@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] Animator animator;
+    [SerializeField] CharacterController characterController;
 
     void Start(){
         animator.SetBool("running", true);
@@ -13,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position += speed * Time.deltaTime * transform.forward;
+        characterController.SimpleMove(speed * transform.forward);
+    }
+
+    void OnCollisionEnter(Collision collision){
+
     }
 }
