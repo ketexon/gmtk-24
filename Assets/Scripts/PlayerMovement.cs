@@ -5,11 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
-    [SerializeField] Animator animator;
-
-    void Start(){
-        animator.SetBool("running", true);
-    }
 
     void Update()
     {

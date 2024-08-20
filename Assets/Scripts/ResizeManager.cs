@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResizeManager : SingletonBehavior<ResizeManager>
+public class ResizeManager : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask;
-
-    [System.NonSerialized] public bool ResizeEnabled = true;
 
     Camera mainCamera;
 
@@ -27,17 +25,15 @@ public class ResizeManager : SingletonBehavior<ResizeManager>
 
         if (resizableObject)
         {
-            if(ResizeEnabled){
-                // Left click down
-                if (Input.GetMouseButtonDown(0))
-                {
-                    resizableObject.Enlarge();
-                }
-                // Right click down
-                else if (Input.GetMouseButtonDown(1))
-                {
-                    resizableObject.Shrink();
-                }
+            // Left click down
+            if (Input.GetMouseButtonDown(0))
+            {
+                resizableObject.Enlarge();
+            }
+            // Right click down
+            else if (Input.GetMouseButtonDown(1))
+            {
+                resizableObject.Shrink();
             }
         }
     }
