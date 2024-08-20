@@ -8,4 +8,6 @@ public class SFXManager : SingletonBehavior<SFXManager>
     public AudioSource Hover;
     public AudioSource PickUp;
     public AudioSource ScrollSize;
+    public AudioSource BalloonGrow;
+    public AudioSource BalloonShrink;
 }

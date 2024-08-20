@@ -10,6 +10,9 @@ public class ResizeManager : SingletonBehavior<ResizeManager>
 
     Camera mainCamera;
 
+    ResizableObject lastResizable = null;
+    float lastHoverSoundTime = float.NegativeInfinity;
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -38,6 +41,14 @@ public class ResizeManager : SingletonBehavior<ResizeManager>
                 {
                     resizableObject.Shrink();
                 }
+            }
+        }
+
+        if(lastResizable != resizableObject){
+            lastResizable = resizableObject;
+            if(resizableObject && Time.time - lastHoverSoundTime > 0.5f){
+                SFXManager.Instance.ScrollSize.Play();
+                lastHoverSoundTime = Time.time;
             }
         }
     }

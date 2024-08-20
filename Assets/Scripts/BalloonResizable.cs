@@ -23,11 +23,13 @@ public class BalloonResizable : ResizableObject
     {
         base.Enlarge();
         balloon.Lift = largeLift;
+        SFXManager.Instance.BalloonGrow.Play();
     }
 
     public override void Shrink()
     {
         base.Shrink();
         balloon.Lift = smallLift;
+        SFXManager.Instance.BalloonShrink.Play();
     }
 }
