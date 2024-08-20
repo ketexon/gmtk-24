@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerResizable : ResizableObject
 {
     [SerializeField] float smallDuration = 5.0f;
+    [SerializeField] Renderer normalMesh;
+    [SerializeField] Renderer smallMesh;
 
     protected override bool DestroyAfter => false;
 
@@ -12,8 +14,16 @@ public class PlayerResizable : ResizableObject
     {
         base.Shrink();
 
+        this.WaitThenDo(resizeDuration, () => {
+            normalMesh.enabled = false;
+            smallMesh.enabled = true;
+        });
+
         ResizeManager.Instance.ResizeEnabled = false;
         this.WaitThenDo(smallDuration, () => {
+            normalMesh.enabled = true;
+            smallMesh.enabled = false;
+
             ResizeManager.Instance.ResizeEnabled = true;
             ResetResizable();
         });

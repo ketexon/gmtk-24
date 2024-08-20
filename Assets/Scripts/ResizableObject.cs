@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResizableObject : MonoBehaviour
 {
-    [SerializeField] float resizeDuration = 0.25f;
+    [SerializeField] protected float resizeDuration = 0.25f;
     [SerializeField] float smallScale = 0.5f;
     [SerializeField] float defaultScale = 1;
     [SerializeField] float largeScale = 2;
